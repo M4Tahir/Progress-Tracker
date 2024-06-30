@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="startup_window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="620.0" minWidth="1035.0" prefHeight="620.0" prefWidth="1035.0" stylesheets="@../css/Startup.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.mt.progresstracker.controllers.StartupController">
+    <left>
+        <HBox fx:id="startup_window_main_menu" maxWidth="225.0" minHeight="225.0" minWidth="225.0" prefWidth="225.0" BorderPane.alignment="CENTER">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <BorderPane.margin>
+                <Insets right="2.0" />
+            </BorderPane.margin>
+        </HBox>
+    </left>
+    <top>
+        <HBox fx:id="startup_top_container" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="60.0" minWidth="1024.0" prefHeight="60.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="1.0" right="5.0" />
+            </BorderPane.margin>
+            <VBox fx:id="startup_window_logo" maxHeight="60.0" maxWidth="225.0" minHeight="60.0" minWidth="225.0" prefHeight="60.0" prefWidth="225.0" HBox.hgrow="NEVER">
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+                <HBox.margin>
+                    <Insets right="2.0" />
+                </HBox.margin>
+                <Label fx:id="logo_label" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="218.0" wrapText="true" />
+            </VBox>
+            <HBox maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="60.0" minWidth="800.0" prefHeight="60.0" HBox.hgrow="ALWAYS">
+                <HBox maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="60.0" minWidth="450.0" prefHeight="60.0" HBox.hgrow="ALWAYS">
+                    <TextField fx:id="search_box" maxHeight="50.0" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="450.0" prefHeight="50.0" prefWidth="450.0" promptText="Courese Name" HBox.hgrow="ALWAYS">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets top="5.0" />
+                        </HBox.margin>
+                    </TextField>
+                </HBox>
+                <HBox fx:id="button_container" alignment="CENTER_RIGHT" maxHeight="60.0" maxWidth="350.0" minHeight="60.0" minWidth="350.0" prefHeight="60.0" prefWidth="350.0" spacing="15.0">
+                    <Button fx:id="new_course_btn" mnemonicParsing="false" prefHeight="29.0" prefWidth="117.0" text="New Course" />
+                    <Button fx:id="open_course_btn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="117.0" text="Open Course" />
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </HBox>
+            </HBox>
+        </HBox>
+    </top>
+    <center>
+        <ListView fx:id="listview_courses_list" minHeight="550.0" minWidth="800.0" prefHeight="572.0" prefWidth="866.0" BorderPane.alignment="CENTER">
+
+        </ListView>
+    </center>
+    <bottom>
+        <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="5.0" prefHeight="5.0" BorderPane.alignment="CENTER" />
+    </bottom>
+    <right>
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="5.0" minWidth="5.0" prefHeight="550.0" prefWidth="5.0" BorderPane.alignment="CENTER" />
+    </right>
+</BorderPane>

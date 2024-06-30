@@ -1,0 +1,57 @@
+/* Main container */
+.root {
+    -fx-font-size: 14px;
+    -fx-background-color:  rgb(39,40,34);
+    -fx-text-fill: white;
+}
+
+
+/* Search box*/
+#search_box{
+    -fx-font-size: 1.1em;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-radius: 15px;
+    -fx-padding: 0 0 0 20px;
+    -fx-border-color: rgb(125, 125, 120);
+
+}
+
+
+#search_box:hover {
+    -fx-border-color: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+#new_course_btn{
+    -fx-spacing: 20px;
+}
+
+#new_course_btn,
+#open_course_btn{
+    -fx-padding: 10px;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-radius: 15px;
+    -fx-border-color: rgb(125, 125, 120);
+}
+
+#new_course_btn:hover{
+    -fx-background-color: linear-gradient(to top right, #333333, #565656);
+   -fx-border-color: none;
+}
+
+#open_course_btn:hover {
+    -fx-background-color: linear-gradient(to top right, #333333, #565656);
+    -fx-border-color: none;
+}
+
+
+
+
+
+
+
+
+
+
+

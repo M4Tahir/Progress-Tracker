@@ -1,0 +1,42 @@
+Absolute Path: Starts with a forward slash (/) and refers to the root of the classpath. For example, /com/myapp/config.properties.
+Relative Path: Does not start with a forward slash and is relative to the class where the getResources method is called. For example, config.properties if the resource is in the same package as the class.
+Classpath: The classpath is a parameter in the Java Virtual Machine or the Java compiler that specifies the location of user-defined classes and packages.
+Usage: Use getClass().getResourceAsStream("/path/to/resource") for absolute paths or getClass().getResourceAsStream("path/to/resource") for relative paths.
+
+The difference between `getResource` and `getResourceAsStream` methods in Java is as follows:
+
+- **Return Type**:
+  - `getResource`: Returns a `URL` object.
+  - `getResourceAsStream`: Returns an `InputStream` object.
+
+- **Resource Access**:
+  - `getResource`: Provides the location of the resource, which can be used to read the resource.
+  - `getResourceAsStream`: Provides a stream to read the content of the resource directly.
+
+- **Usage**:
+  - `getResource`: Useful when you need to know the resource's location or need to manipulate the resource's URL.
+  - `getResourceAsStream`: Convenient for reading the contents of a resource without dealing with URL connections.
+
+Both methods are used to find resources with a given name, but they differ in how they provide access to the resource's content[^1^][1]. The `getResource` method is part of the `Class` class, while `getResourceAsStream` is part of both the `Class` and `ClassLoader` classes. They also handle resources in named modules differently, adhering to module encapsulation rules.
+
+Work out the solution according to what you want...
+
+There are two things that getResource/getResourceAsStream() will get from the class it is called on...
+
+The class loader
+The starting location
+So if you do
+
+this.getClass().getResource("foo.txt");
+it will attempt to load foo.txt from the same package as the "this" class and with the class loader of the "this" class. If you put a "/" in front then you are absolutely referencing the resource.
+
+this.getClass().getResource("/x/y/z/foo.txt")
+will load the resource from the class loader of "this" and from the x.y.z package (it will need to be in the same directory as classes in that package).
+
+Thread.currentThread().getContextClassLoader().getResource(name)
+will load with the context class loader but will not resolve the name according to any package (it must be absolutely referenced)
+
+System.class.getResource(name)
+Will load the resource with the system class loader (it would have to be absolutely referenced as well, as you won't be able to put anything into the java.lang package (the package of System).
+
+Just take a look at the source. Also indicates that getResourceAsStream just calls "openStream" on the URL returned from getResource and returns that.
