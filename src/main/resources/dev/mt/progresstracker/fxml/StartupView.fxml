@@ -7,14 +7,18 @@
 
 <BorderPane fx:id="startup_window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="620.0" minWidth="1035.0" prefHeight="620.0" prefWidth="1035.0" stylesheets="@../css/Startup.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.mt.progresstracker.controllers.StartupController">
     <left>
-        <HBox fx:id="startup_window_main_menu" maxWidth="225.0" minHeight="225.0" minWidth="225.0" prefWidth="225.0" BorderPane.alignment="CENTER">
-            <opaqueInsets>
-                <Insets />
-            </opaqueInsets>
-            <BorderPane.margin>
-                <Insets right="2.0" />
-            </BorderPane.margin>
-        </HBox>
+      <VBox BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="2.0" />
+         </BorderPane.margin>
+         <children>
+            <Label fx:id="sidebar_recent" alignment="CENTER" contentDisplay="CENTER" maxHeight="70.0" maxWidth="1.7976931348623157E308" minHeight="70.0" minWidth="225.0" prefHeight="70.0" prefWidth="225.0" text="Recent" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
     </left>
     <top>
         <HBox fx:id="startup_top_container" maxHeight="60.0" maxWidth="1.7976931348623157E308" minHeight="60.0" minWidth="1024.0" prefHeight="60.0" BorderPane.alignment="CENTER">
